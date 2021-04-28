@@ -1,0 +1,7 @@
+.flat {
+  @apply w-full bg-accent p-5 rounded-md text-white font-semibold tracking-wider shadow-xl;
+}
+
+.rounded {
+  @apply rounded-full bg-accent flex items-center justify-center fixed shadow-xl right-8 bottom-8 md:right-20 md:bottom-20 h-16 w-16;
+}

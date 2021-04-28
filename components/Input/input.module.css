@@ -1,0 +1,19 @@
+.wrapper {
+  @apply relative flex items-center text-secondary;
+}
+
+.icon {
+  @apply absolute left-0 flex items-center justify-center pl-2 w-7 h-7;
+}
+
+.input {
+  @apply p-4 shadow-lg w-full pl-10 bg-secondary;
+}
+
+.label {
+  @apply ml-5;
+}
+
+.wrapper, .wrapper > * {
+  transition: all 0.8s ease-in-out;
+}

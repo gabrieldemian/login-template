@@ -1,9 +1,43 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-accent: rgb(255, 38, 98);
+  --color-text-primary: #2d3748;
+  --color-text-secondary: #4a5568;
+  --color-text-accent: rgb(255, 38, 98);
+}
+
+P, label, input {
+  font-weight: 500;
+  @apply text-secondary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-primary;
+}
+
+.dark {
+  --color-bg-primary: #131416;
+  --color-bg-secondary: #1c1c1c;
+  --color-bg-accent: rgb(255, 38, 98);
+  --color-text-primary: #cecece;
+  --color-text-secondary: rgb(206, 206, 206);
+  --color-text-accent: rgb(255, 38, 98);
+}
+
+.link {
+  @apply text-accent font-bold cursor-pointer;
+}
+
+.link-border {
+  @apply border-b-2 border-primary-500;
+}
+
+html, body {
+  transition: all 0.8s ease-in-out;
+  overflow-x: hidden;
+  @apply bg-primary;
+  @apply font-body !important;
 }
 
 a {
@@ -13,4 +47,9 @@ a {
 
 * {
   box-sizing: border-box;
+  outline: none !important;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

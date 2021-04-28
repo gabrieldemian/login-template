@@ -1,65 +1,84 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Footer from "@/components/Footer";
+import Input from "@/components/Input";
+import Image from "next/image";
+import Button from "@/components/Button";
+import Svg from "@/components/Svg";
+import { useTheme } from "next-themes";
 
 export default function Home() {
+
+  const { theme, setTheme } = useTheme("dark");
+  let isDark = theme === "dark";
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <section>
+      <div className="w-full flex my-10 lg:my-20">
+        <div className="container flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-8/12 items-center flex justify-center lg:justify-start flex-col lg:flex-row">
+            <h1 className="text-6xl font-bold mr-5">Gabi</h1>
+            <div className="flex flex-col">
+              <p>Cloud project manager</p>
+              <p>
+                Your data, <span className="link">your rules.</span>
+              </p>
+            </div>
+          </div>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className="w-full lg:w-4/12 mt-5 lg:mt-0 lg:text-left flex items-center justify-center lg:justify-start flex-col lg:flex-row">
+            <h1 className="font-bold text-2xl mr-5">Register</h1>
+            <p>Faça alguma coisa bla bla bla bla bla</p>
+          </div>
         </div>
-      </main>
+      </div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <div className="container flex flex-col-reverse lg:flex-row gap-20 lg:gap-0">
+        <div className="w-full h-full lg:w-8/12 flex items-center">
+          <div className="w-full lg:w-1/2">
+            {/* <Image
+              objectFit
+              width={744}
+              height={744}
+              layout="responsive"
+              src="/login.svg"
+            /> */}
+            <div className="relative w-full">
+              <Svg icon="login" />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-4/12 h-full gap-8 flex flex-col">
+          <div className="flex-row flex gap-5 justify-center">
+            <Input icon="user" placeholder="Nome" className="flex-grow" />
+            <Input icon="user" placeholder="Sobrenome" className="flex-grow" />
+          </div>
+
+          <Input icon="letter" placeholder="Email" />
+          <Input icon="lock" placeholder="Senha" />
+          <Input icon="lock" placeholder="Confirmar senha" />
+
+          <Input
+            type="checkbox"
+            placeholder="Eu concordo com os termos"
+            id="termos"
+          />
+
+          <Button>Criar conta</Button>
+
+          <p>
+            Já tem uma conta? <a className="link link-border">Login</a>
+          </p>
+        </div>
+      </div>
+
+      <Footer />
+
+      <Button
+        type="rounded"
+        onClick={() => setTheme(isDark ? "light" : "dark")}
+      >
+        <Image width={33} height={33} src={isDark ? "/moon.svg" : "/sun.svg"} />
+      </Button>
+    </section>
+  );
 }
