@@ -4,7 +4,7 @@ import { DefaultSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider defaultTheme="system" attribute="class">
       <DefaultSeo
         title="Login template | Gabriel Costa"
         description="Template de login feito por Gabriel Costa"

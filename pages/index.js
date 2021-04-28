@@ -12,8 +12,8 @@ export default function Home() {
   useEffect(() => setMounted(true), [])
   if (!mounted) return null
   
-  const { theme, setTheme } = useTheme();
-  let isDark = theme === "dark";
+  const { setTheme, resolvedTheme } = useTheme();
+  let isDark = resolvedTheme === "dark";
 
   return (
     <section>
