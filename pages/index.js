@@ -15,18 +15,18 @@ export default function Home() {
       <div className="w-full flex my-10 lg:my-20">
         <div className="container flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-8/12 items-center flex justify-center lg:justify-start flex-col lg:flex-row">
-            <h1 className="text-6xl font-bold mr-5">Gabi</h1>
+            <h1 className="text-6xl font-bold lg:mr-5 mb-5 lg:mb-0">Template</h1>
             <div className="flex flex-col">
-              <p>Cloud project manager</p>
+              <p>Alguma coisa</p>
               <p>
-                Your data, <span className="link">your rules.</span>
+                Será escrita, <span className="link">aqui.</span>
               </p>
             </div>
           </div>
 
           <div className="w-full lg:w-4/12 mt-5 lg:mt-0 lg:text-left flex items-center justify-center lg:justify-start flex-col lg:flex-row">
-            <h1 className="font-bold text-2xl mr-5">Register</h1>
-            <p>Faça alguma coisa bla bla bla bla bla</p>
+            <h1 className="font-bold text-2xl mr-5">Registre-se</h1>
+            <p>E comece a usar o nosso sistema.</p>
           </div>
         </div>
       </div>
