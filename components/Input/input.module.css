@@ -7,7 +7,7 @@
 }
 
 .input {
-  @apply p-4 shadow-lg w-full pl-10 bg-secondary;
+  @apply p-4 shadow-lg w-full pl-10 bg-secondary border-0 focus:ring-0;
 }
 
 .label {
@@ -15,5 +15,6 @@
 }
 
 .wrapper, .wrapper > * {
+  outline: none !important;
   transition: all 0.8s ease-in-out;
 }

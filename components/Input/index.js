@@ -10,13 +10,13 @@ export default function index({
 }) {
   return (
     <>
-      {type === "text" ? (
+      {type === "text" || type === "email" ? (
         <div className={`${s.wrapper} ${className}`}>
           <i className={s.icon}>
             {/* <img src={icon} /> */}
             <Svg icon={icon} />
           </i>
-          <input placeholder={placeholder} className={s.input} />
+          <input type={type} placeholder={placeholder} className={s.input} />
         </div>
       ) : (
         <div className="flex items-center">

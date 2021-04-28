@@ -58,7 +58,7 @@ export default function Home() {
             <Input icon="user" placeholder="Sobrenome" className="flex-grow" />
           </div>
 
-          <Input icon="letter" placeholder="Email" />
+          <Input icon="letter" type="email" placeholder="Email" />
           <Input icon="lock" placeholder="Senha" />
           <Input icon="lock" placeholder="Confirmar senha" />
 
