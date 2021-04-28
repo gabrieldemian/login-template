@@ -4,11 +4,14 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import Svg from "@/components/Svg";
 import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 export default function Home() {
 
-  const { theme, setTheme } = useTheme("dark");
+  const { theme, setTheme } = useTheme("");
   let isDark = theme === "dark";
+
+  useEffect(() => setTheme("dark"), []);
 
   return (
     <section>
