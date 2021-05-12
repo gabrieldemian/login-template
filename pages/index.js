@@ -6,36 +6,17 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import RegisterForm from "@/components/RegisterForm";
 import LoginForm from "@/components/LoginForm";
-import { motion, useCycle } from "framer-motion";
+import { AnimatePresence, useCycle } from "framer-motion";
 
 export default function Home() {
-
   const [isRegisterOpen, toggleRegister] = useCycle(true, false);
-  
+
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
   const { setTheme, resolvedTheme } = useTheme();
   let isDark = resolvedTheme === "dark";
-
-  const animate = {
-    open: {
-      transition: {
-        type: "spring",
-        stiffness: 20,
-        restDelta: 2,
-      },
-    },
-    closed: {
-      transition: {
-        delay: 0.5,
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-      },
-    },
-  };
 
   return (
     <section>
@@ -54,12 +35,7 @@ export default function Home() {
           </div>
 
           <div className="w-full lg:w-4/12 mt-5 lg:mt-0 lg:text-left flex items-center justify-center lg:justify-start flex-col lg:flex-row">
-            <h1
-              onClick={() => toggleRegister()}
-              className="font-bold text-2xl mr-5"
-            >
-              Registre-se
-            </h1>
+            <h1 className="font-bold text-2xl mr-5">Registre-se</h1>
             <p>E comece a usar o nosso sistema.</p>
           </div>
         </div>
@@ -74,15 +50,29 @@ export default function Home() {
           </div>
         </div>
 
-        <motion.div
-          initial={false}
-          animate={isRegisterOpen ? "open" : "closed"}
-          variants={animate}
-          className="lg:w-4/12 h-full w-full"
-        >
-          <RegisterForm toggle={() => toggleRegister()} />
-          {/* <LoginForm /> */}
-        </motion.div>
+        <div className="lg:w-4/12 h-full w-full relative">
+          <AnimatePresence>
+            {isRegisterOpen && (
+              <RegisterForm
+                toggle={() => toggleRegister()}
+                initial="exit"
+                exit="exit"
+                animate="initial"
+              />
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence>
+            {!isRegisterOpen && (
+              <LoginForm
+                toggle={() => toggleRegister()}
+                initial="exit"
+                exit="exit"
+                animate="initial"
+              />
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       <Footer />

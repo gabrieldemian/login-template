@@ -3,22 +3,22 @@ import Button from "@/components/Button";
 import { motion } from "framer-motion";
 
 const parentAnimation = {
-  open: {
+  initial: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 }
   },
-  closed: {
+  exit: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 }
   }
 };
 
 const childrenAnimation = {
-  open: {
+  initial: {
     opacity: 1,
     transition: {
       y: { stiffness: 1000, velocity: -100 }
     }
   },
-  closed: {
+  exit: {
     opacity: 0,
     transition: {
       y: { stiffness: 1000 }
@@ -26,15 +26,9 @@ const childrenAnimation = {
   }
 }
 
-export default function index({ toggle }) {
+export default function index({ toggle, ...other }) {
   return (
-    <motion.div variants={parentAnimation} className="gap-8 flex flex-col flex-wrap">
-      {/* <motion.li variants={childrenAnimation}>Isto é apenas um teste de animação</motion.li>
-      <motion.li variants={childrenAnimation}>Isto é apenas um teste de animação</motion.li>
-      <motion.li variants={childrenAnimation}>Isto é apenas um teste de animação</motion.li>
-      <motion.li variants={childrenAnimation}>Isto é apenas um teste de animação</motion.li>
-      <motion.li variants={childrenAnimation}>Isto é apenas um teste de animação</motion.li>
-      <motion.li variants={childrenAnimation}>Isto é apenas um teste de animação</motion.li> */}
+    <motion.div variants={parentAnimation} className="gap-8 flex flex-col flex-wrap" {...other}>
 
       <motion.div variants={childrenAnimation} className="flex-row flex gap-5 justify-center">
         <Input icon="user" placeholder="Nome" className="flex-grow" />
@@ -58,7 +52,7 @@ export default function index({ toggle }) {
       </motion.div>
 
       <motion.p variants={childrenAnimation}>
-        Já tem uma conta? <a onClick={() => toggle} className="link link-border">Login</a>
+        Já tem uma conta? <a onClick={toggle} className="link link-border">Login</a>
       </motion.p>
     </motion.div>
   );
