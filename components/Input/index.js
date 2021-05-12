@@ -6,7 +6,8 @@ export default function index({
   icon,
   placeholder,
   type = "text",
-  id
+  id,
+  variants
 }) {
   return (
     <>

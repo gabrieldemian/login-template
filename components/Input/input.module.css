@@ -7,7 +7,7 @@
 }
 
 .input {
-  @apply p-4 shadow-lg w-full pl-10 bg-secondary border-0 focus:ring-0;
+  @apply p-4 shadow-lg w-full pl-10 bg-primary border-0 focus:ring-0 ring-0 text-accent font-bold rounded-lg;
 }
 
 .label {

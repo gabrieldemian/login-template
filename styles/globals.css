@@ -1,19 +1,10 @@
 :root {
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f9fafb;
+  --color-bg-secondary: #f8f8f8;
   --color-bg-accent: rgb(255, 38, 98);
   --color-text-primary: #2d3748;
   --color-text-secondary: #4a5568;
   --color-text-accent: rgb(255, 38, 98);
-}
-
-P, label, input {
-  font-weight: 500;
-  @apply text-secondary;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  @apply text-primary;
 }
 
 .dark {
@@ -36,13 +27,27 @@ h1, h2, h3, h4, h5, h6 {
 html, body {
   transition: all 0.8s ease-in-out;
   overflow-x: hidden;
-  @apply bg-primary;
+  @apply bg-secondary;
   @apply font-body !important;
+}
+
+*::selection {
+  background-color: var(--color-text-accent);
+  color: var(--color-bg-primary)
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+P, label, input {
+  font-weight: 500;
+  @apply text-secondary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-primary;
 }
 
 * {
