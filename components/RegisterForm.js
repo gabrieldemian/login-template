@@ -36,8 +36,8 @@ export default function index({ toggle, ...other }) {
       </motion.div>
 
       <motion.div variants={childrenAnimation}><Input variants={childrenAnimation} icon="letter" type="email" placeholder="Email" /></motion.div>
-      <motion.div variants={childrenAnimation}><Input variants={childrenAnimation} icon="lock" placeholder="Senha" /></motion.div>
-      <motion.div variants={childrenAnimation}><Input variants={childrenAnimation} icon="lock" placeholder="Confirmar senha" /></motion.div>
+      <motion.div variants={childrenAnimation}><Input variants={childrenAnimation} type="password" icon="lock" placeholder="Senha" /></motion.div>
+      <motion.div variants={childrenAnimation}><Input variants={childrenAnimation} type="password" icon="lock" placeholder="Confirmar senha" /></motion.div>
 
       <motion.div variants={childrenAnimation}>
         <Input

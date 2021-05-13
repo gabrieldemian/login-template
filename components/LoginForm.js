@@ -34,7 +34,7 @@ export default function LoginForm({ toggle, ...other }) {
         <Input icon="letter" type="email" placeholder="Email" />
       </motion.div>
       <motion.div variants={childrenAnimation}>
-        <Input icon="lock" placeholder="Senha" />
+        <Input icon="lock" type="password" placeholder="Senha" />
       </motion.div>
 
       <motion.div variants={childrenAnimation}>

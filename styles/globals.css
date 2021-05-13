@@ -36,12 +36,7 @@ html, body {
   color: var(--color-bg-primary)
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-P, label, input {
+p, label, input {
   font-weight: 500;
   @apply text-secondary;
 }

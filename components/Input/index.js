@@ -6,15 +6,13 @@ export default function index({
   icon,
   placeholder,
   type = "text",
-  id,
-  variants
+  id
 }) {
   return (
     <>
-      {type === "text" || type === "email" ? (
+      {type === "text" || type === "email" || type === "password" ? (
         <div className={`${s.wrapper} ${className}`}>
           <i className={s.icon}>
-            {/* <img src={icon} /> */}
             <Svg icon={icon} />
           </i>
           <input type={type} placeholder={placeholder} className={s.input} />
