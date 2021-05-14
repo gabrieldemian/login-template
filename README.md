@@ -1,4 +1,4 @@
-## Template de login e cadastro com animações e tema escuro.
+Template de login e cadastro com animações e tema escuro.
 
 ## ⚡ Stack
 - Nextjs
